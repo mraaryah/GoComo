@@ -3,75 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoComo - Official Kids Channel</title>
+    <title>GoComo - Official Kids Channel & 3D Animations</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Fredoka', cursive; }
-        body { background-color: #fffaf0; color: #333; text-align: center; }
+        body { background: linear-gradient(135deg, #fdfbf7 0%, #f4f1ea 100%); color: #333; text-align: center; min-height: 100vh; }
         
         /* Banner Styling */
+        .banner-container {
+            width: 100%;
+            max-height: 380px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
         .banner {
             width: 100%;
-            height: 250px;
+            height: 320px;
             background-image: url('https://yt3.googleusercontent.com/QcZ958uHszbuq1nn5CcqAAbLygvUAMRrz1L_zdaosxQ0TG-TD-F-e5-fqWbaG3iqCF8tWKLkvw=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj');
             background-size: cover;
             background-position: center;
-            border-bottom: 5px solid #ffeb3b;
         }
 
+        /* Profile Logo overlapping banner */
         .profile-section {
-            margin-top: -60px;
-            padding: 20px;
+            margin-top: -70px;
+            position: relative;
+            z-index: 10;
         }
         .channel-logo {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 6px solid #fffaf0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 6px solid #ffffff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             object-fit: cover;
+            background: white;
         }
 
-        h1 { font-size: 3rem; margin-top: 10px; }
-        .g-color { color: #00bcd4; } .o1-color { color: #ffeb3b; } .c-color { color: #ff5252; } 
-        .o2-color { color: #9c27b0; } .m-color { color: #4caf50; } .o3-color { color: #ff9800; }
+        /* Channel Title with multi-colors */
+        .channel-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 15px 0 5px 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .letter-g { color: #00bcd4; }
+        .letter-o1 { color: #ffeb3b; }
+        .letter-c { color: #ff5252; }
+        .letter-o2 { color: #9c27b0; }
+        .letter-m { color: #4caf50; }
+        .letter-o3 { color: #ff9800; }
 
-        .container { max-width: 1000px; margin: 20px auto; padding: 20px; }
-        .videos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 50px 20px; }
         
-        .video-card { background: white; padding: 10px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        iframe { width: 100%; height: 200px; border-radius: 15px; border: none; }
-        
-        .social-links { margin: 40px 0; }
-        .social-links a { margin: 10px; padding: 15px 25px; border-radius: 30px; color: white; text-decoration: none; display: inline-block; font-weight: 600; }
-        .yt { background: #ff0000; } .fb { background: #1877f2; } .insta { background: #e1306c; }
+        /* Section Header */
+        .section-title {
+            font-size: 2.2rem;
+            color: #ff5252;
+            margin: 40px 0 25px 0;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #ffeb3b;
+            border-radius: 2px;
+        }
+
+        /* Videos Grid */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+        .video-card {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255,235,59,0.3);
+        }
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        .video-frame-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-frame-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #444;
+            margin-top: 15px;
+        }
+
+        /* Social & Subscribe Buttons */
+        .social-section {
+            margin-top: 60px;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            padding: 40px 20px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(255,117,140,0.3);
+            color: white;
+        }
+        .social-section h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .btn:hover { transform: scale(1.05); opacity: 0.9; }
+        .yt-btn { background-color: #ff0000; }
+        .fb-btn { background-color: #1877f2; }
+        .insta-btn { background: linear-space(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); background-color: #e1306c; }
+        .wa-btn { background-color: #25d366; }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            background-color: #222;
+            color: #aaa;
+            font-size: 0.95rem;
+            border-top: 4px solid #ffeb3b;
+        }
     </style>
 </head>
 <body>
 
-    <div class="banner"></div>
+    <!-- Header Banner -->
+    <div class="banner-container">
+        <div class="banner"></div>
+    </div>
+
+    <!-- Profile & Title Section -->
     <div class="profile-section">
-        <img src="https://yt3.googleusercontent.com/_zCWvLGz10cAIMX0aRzYcM9m6cXgRIRmQlBAOIRt1PjhOJwWKWxXGNWFcjJ-qbSEUwq_HZWnUg=s160-c-k-c0x00ffffff-no-rj" class="channel-logo" alt="GoComo">
-        <h1>
-            <span class="g-color">G</span><span class="o1-color">o</span><span class="c-color">C</span><span class="o2-color">o</span><span class="m-color">m</span><span class="o3-color">o</span>
+        <img src="https://yt3.googleusercontent.com/_zCWvLGz10cAIMX0aRzYcM9m6cXgRIRmQlBAOIRt1PjhOJwWKWxXGNWFcjJ-qbSEUwq_HZWnUg=s160-c-k-c0x00ffffff-no-rj" class="channel-logo" alt="GoComo Logo">
+        <h1 class="channel-title">
+            <span class="letter-g">G</span><span class="letter-o1">o</span><span class="letter-c">C</span><span class="letter-o2">o</span><span class="letter-m">m</span><span class="letter-o3">o</span> 🌟
         </h1>
+        <p class="tagline">Fun Nursery Rhymes • Happy Kids Songs • Cute Stories</p>
     </div>
 
     <div class="container">
-        <h2>Our Popular Videos</h2>
+        <!-- Popular Videos Section -->
+        <h2 class="section-title">Featured Videos</h2>
         <div class="videos-grid">
-            <div class="video-card"><iframe src="https://www.youtube.com/embed/z57FyjYG7Yo"></iframe><p>Meow Meow Poonai</p></div>
-            <div class="video-card"><iframe src="https://www.youtube.com/embed/o-SpIG36J-0"></iframe><p>Kuva Vaathu Song</p></div>
-            <div class="video-card"><iframe src="https://www.youtube.com/embed/58Yr3DGTY6M"></iframe><p>Ganapathy Song</p></div>
-            <div class="video-card"><iframe src="https://www.youtube.com/embed/6aNt3LxpVJc"></iframe><p>Kiya Kiya Kuruvi</p></div>
-            <div class="video-card"><iframe src="https://www.youtube.com/embed/yXuhLPgk6bs"></iframe><p>Watermelon Song</p></div>
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-frame-container">
+                    <iframe src="https://www.youtube.com/embed/z57FyjYG7Yo" title="Meow Meow Poonai"></iframe>
+                </div>
+                <div class="video-title">ミアウ ミャウ பூனை மீயாவ் | Meow Meow Poonai</div>
+            </div>
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-frame-container">
+                    <iframe src="https://www.youtube.com/embed/o-SpIG36J-0" title="Kuva Vaathu Song"></iframe>
+                </div>
+                <div class="video-title">குவா குவா வாத்து | Kuva Vaathu Song</div>
+            </div>
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-frame-container">
+                    <iframe src="https://www.youtube.com/embed/58Yr3DGTY6M" title="Ganapathy Song"></iframe>
+                </div>
+                <div class="video-title">பிள்ளையார் பாட்டு | Ganapathy Kids Song</div>
+            </div>
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-frame-container">
+                    <iframe src="https://www.youtube.com/embed/6aNt3LxpVJc" title="Kiya Kiya Kuruvi">G</iframe>
+                </div>
+                <div class="video-title">கியா கியா குருவி பாட்டு | Kiya Kiya Kuruvi</div>
+            </div>
+            <!-- Video 5 -->
+            <div class="video-card">
+                <div class="video-frame-container">
+                    <iframe src="https://www.youtube.com/embed/yXuhLPgk6bs" title="Watermelon Song"></iframe>
+                </div>
+                <div class="video-title">தண்டு தண்டு வாட்டர்மெலன் | Watermelon Song</div>
+            </div>
         </div>
 
-        <div class="social-links">
-            <a href="https://www.youtube.com/@GoComo" class="yt"><i class="fab fa-youtube"></i> Subscribe on YouTube</a>
+        <!-- Social Links & Subscribe Section -->
+        <div class="social-section">
+            <h2>Join Our GoComo Family!</h2>
+            <div class="social-buttons">
+                <a href="https://www.youtube.com/@GoComo" target="_blank" class="btn yt-btn">
+                    <i class="fab fa-youtube"></i> Subscribe on YouTube
+                </a>
+                <a href="https://facebook.com/GoComo" target="_blank" class="btn fb-btn">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://instagram.com/gocomokids" target="_blank" class="btn insta-btn">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://whatsapp.com/channel/0029Vb8zUrVFMqryY38In51B" target="_blank" class="btn wa-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Channel
+                </a>
+            </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 GoComo. All Rights Reserved. 100% Original, Safe & Family-Friendly 3D Animation!</p>
+    </footer>
 
 </body>
 </html>
