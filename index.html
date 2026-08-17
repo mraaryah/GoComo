@@ -3,218 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoComo - Fun Nursery Rhymes & 3D Kids Animation</title>
+    <title>GoComo - Official Kids Channel</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Fredoka', cursive, sans-serif;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Fredoka', cursive; }
+        body { background-color: #fffaf0; color: #333; text-align: center; }
+        
+        /* Banner Styling */
+        .banner {
+            width: 100%;
+            height: 250px;
+            background-image: url('https://yt3.googleusercontent.com/QcZ958uHszbuq1nn5CcqAAbLygvUAMRrz1L_zdaosxQ0TG-TD-F-e5-fqWbaG3iqCF8tWKLkvw=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid #ffeb3b;
         }
-        body {
-            background-color: #fffaf0;
-            color: #333;
-            text-align: center;
-        }
-        header {
-            background: linear-gradient(135deg, #11998e, #38ef7d);
-            padding: 40px 20px;
-            color: white;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 10px;
+
+        .profile-section {
+            margin-top: -60px;
+            padding: 20px;
         }
         .channel-logo {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 4px solid white;
+            border: 6px solid #fffaf0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        /* GoComo Multi-color text matching banner style */
-        .gocomo-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            letter-spacing: 2px;
-        }
-        .letter-g { color: #00bcd4; }
-        .letter-o1 { color: #ffeb3b; }
-        .letter-c { color: #ff5252; }
-        .letter-o2 { color: #9c27b0; }
-        .letter-m { color: #4caf50; }
-        .letter-o3 { color: #ff9800; }
 
-        header p {
-            font-size: 1.2rem;
-            font-weight: 600;
-            background: rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 20px;
-            margin-top: 10px;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .about-section {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-        }
-        .about-section h2 {
-            color: #ff5252;
-            margin-bottom: 15px;
-            font-size: 2rem;
-        }
-        .about-section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        .video-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-        .video-card:hover {
-            transform: translateY(-8px);
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .video-title {
-            padding: 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #444;
-        }
-        .social-links {
-            margin: 50px 0;
-        }
-        .social-links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 25px;
-            border-radius: 30px;
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: opacity 0.3s;
-        }
-        .social-links a:hover {
-            opacity: 0.85;
-        }
-        .fb { background-color: #1877f2; }
-        .insta { background-color: #e1306c; }
-        .wa { background-color: #25d366; }
-        .yt { background-color: #ff0000; }
+        h1 { font-size: 3rem; margin-top: 10px; }
+        .g-color { color: #00bcd4; } .o1-color { color: #ffeb3b; } .c-color { color: #ff5252; } 
+        .o2-color { color: #9c27b0; } .m-color { color: #4caf50; } .o3-color { color: #ff9800; }
+
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; }
+        .videos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            font-size: 0.9rem;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
+        .video-card { background: white; padding: 10px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        iframe { width: 100%; height: 200px; border-radius: 15px; border: none; }
+        
+        .social-links { margin: 40px 0; }
+        .social-links a { margin: 10px; padding: 15px 25px; border-radius: 30px; color: white; text-decoration: none; display: inline-block; font-weight: 600; }
+        .yt { background: #ff0000; } .fb { background: #1877f2; } .insta { background: #e1306c; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <!-- உங்கள் யூடியூப் லோகோ லிங்க் இங்கு இணைக்கப்பட்டுள்ளது -->
-            <img src="https://yt3.googleusercontent.com/ytc/AIdro_mQ1k... (உங்கள் சேனல் லோகோ)" alt="GoComo Logo" class="channel-logo">
-            <h1 class="gocomo-title">
-                <span class="letter-g">G</span><span class="letter-o1">o</span><span class="letter-c">C</span><span class="letter-o2">o</span><span class="letter-m">m</span><span class="letter-o3">o</span> 🌟
-            </h1>
-        </div>
-        <p>Fun Nursery Rhymes • Happy Kids Songs • Cute Stories</p>
-    </header>
-
-    <div class="container">
-        <!-- About Section -->
-        <div class="about-section">
-            <h2>Welcome to GoComo!</h2>
-            <p>I believe in "Quality Over Quantity" — handcrafted every frame with dedicated manual effort, original Tamil lyrics, custom 3D characters, and moral lessons for a positive childhood!</p>
-        </div>
-
-        <!-- Featured Videos Section -->
-        <h2 style="color: #ff5252; font-size: 2rem; margin-bottom: 20px;">Featured Videos</h2>
-        <div class="videos-grid">
-            <!-- Video 1 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GoComo Video"></iframe>
-                </div>
-                <div class="video-title">ミアウ ミャウ பூனை மீயாவ் | Meow Meow Poonai</div>
-            </div>
-            <!-- Video 2 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GoComo Video"></iframe>
-                </div>
-                <div class="video-title">தண்டு தண்டு வாட்டர்மெலன் | Watermelon Song</div>
-            </div>
-            <!-- Video 3 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GoComo Video"></iframe>
-                </div>
-                <div class="video-title">கியா கியா குருவி பாட்டு | Kiya Kiya Kuruvi</div>
-            </div>
-        </div>
-
-        <!-- Social Links -->
-        <div class="social-links">
-            <h2 style="color: #333; margin-bottom: 20px;">Connect With Us</h2>
-            <a href="https://www.youtube.com/@GoComo" target="_blank" class="yt"><i class="fab fa-youtube"></i> YouTube</a>
-            <a href="https://facebook.com/GoComo" target="_blank" class="fb"><i class="fab fa-facebook"></i> Facebook</a>
-            <a href="https://instagram.com/gocomokids" target="_blank" class="insta"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://whatsapp.com/channel/0029Vb8zUrVFMqryY38In51B" target="_blank" class="wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
+    <div class="banner"></div>
+    <div class="profile-section">
+        <img src="https://yt3.googleusercontent.com/_zCWvLGz10cAIMX0aRzYcM9m6cXgRIRmQlBAOIRt1PjhOJwWKWxXGNWFcjJ-qbSEUwq_HZWnUg=s160-c-k-c0x00ffffff-no-rj" class="channel-logo" alt="GoComo">
+        <h1>
+            <span class="g-color">G</span><span class="o1-color">o</span><span class="c-color">C</span><span class="o2-color">o</span><span class="m-color">m</span><span class="o3-color">o</span>
+        </h1>
     </div>
 
-    <footer>
-        <p>&copy; 2026 GoComo. All Rights Reserved. | 100% Original, Safe & Family-Friendly!</p>
-    </footer>
+    <div class="container">
+        <h2>Our Popular Videos</h2>
+        <div class="videos-grid">
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/z57FyjYG7Yo"></iframe><p>Meow Meow Poonai</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/o-SpIG36J-0"></iframe><p>Kuva Vaathu Song</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/58Yr3DGTY6M"></iframe><p>Ganapathy Song</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/6aNt3LxpVJc"></iframe><p>Kiya Kiya Kuruvi</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/yXuhLPgk6bs"></iframe><p>Watermelon Song</p></div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.youtube.com/@GoComo" class="yt"><i class="fab fa-youtube"></i> Subscribe on YouTube</a>
+        </div>
+    </div>
 
 </body>
 </html>
